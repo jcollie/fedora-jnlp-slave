@@ -4,7 +4,7 @@ ENV LANG C.UTF-8
 ENV HOME /home/jenkins
 
 RUN dnf -y update && rm -rf /usr/share/doc /usr/share/man /var/cache/dnf
-RUN dnf -y install curl java-1.8.0-openjdk-headless && rm -rf /usr/share/doc /usr/share/man /var/cache/dnf
+RUN dnf -y install curl git java-1.8.0-openjdk-headless && rm -rf /usr/share/doc /usr/share/man /var/cache/dnf
 
 RUN groupadd -g 10000 jenkins
 RUN useradd -c "Jenkins user" -d $HOME -u 10000 -g 10000 -m jenkins
