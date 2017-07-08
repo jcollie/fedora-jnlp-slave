@@ -8,6 +8,7 @@ RUN dnf -y install curl git java-1.8.0-openjdk-headless sudo && rm -rf /usr/shar
 
 RUN groupadd -g 10000 jenkins
 RUN useradd -c "Jenkins user" -d $HOME -u 10000 -g 10000 -m jenkins
+RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/jenkins
 
 ARG VERSION=3.7
 
